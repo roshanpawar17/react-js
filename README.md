@@ -48,3 +48,36 @@ npm run dev
 
 
 **---------------------------------------------------------------------**
+
+## Most important JSX rules to remember
+
+1. Return one parent
+
+<>
+  ...
+</>
+
+ 2. JavaScript goes inside {}
+
+<h1>{name}</h1>
+
+3. Use className
+
+<div className="container">
+
+4. Events use camelCase
+
+<button onClick={handleClick}>
+
+5. Close all tags
+
+<img src="..." />
+<input />
+
+6. Components start with uppercase
+
+<User />
+
+7. Lists need keys
+
+{users.map(user => <li key={user.id}>{user.name}</li>)}
