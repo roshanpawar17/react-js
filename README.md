@@ -81,3 +81,11 @@ npm run dev
 7. Lists need keys
 
 {users.map(user => <li key={user.id}>{user.name}</li>)}
+
+
+**---------------------------------------------------------------------**
+
+## Fragment
+
+1. In React, Fragments let you group multiple JSX elements without adding an extra DOM element.
+2. React components need to return elements in a valid structure. Instead of adding an unnecessary wrapper:
