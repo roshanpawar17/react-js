@@ -1,6 +1,8 @@
 import BasicExample from "./components/01_BasicExample/BasicExample";
 import JsEvaluate from "./components/02_JsEvaluate/JsEvaluate";
 import FunctionCalls from "./components/03_FunctionCalls/FunctionCalls";
+import ConditionalRendering from "./components/04_ConditionalRendering/ConditionalRendering";
+import JsObject from "./components/05_JsObject/JsObject";
 
 import "./App.css";
 
@@ -14,6 +16,10 @@ function App() {
       <JsEvaluate />
 
       <FunctionCalls />
+
+      <ConditionalRendering />
+
+      <JsObject />
     </div>
   )
 }
