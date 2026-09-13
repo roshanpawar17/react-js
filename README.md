@@ -83,9 +83,20 @@ npm run dev
 {users.map(user => <li key={user.id}>{user.name}</li>)}
 
 
-**------------------------------ Components ---------------------------------------**
+**---------------------------------------------------------------------**
 
-## 05_Fragment
+## Components
+
+### 05_fragment:
 
 1. In React, Fragments let you group multiple JSX elements without adding an extra DOM element.
 2. React components need to return elements in a valid structure. Instead of adding an unnecessary wrapper:
+
+**---------------------**
+
+### 06_map-method:
+
+1. In React, JavaScript's map() method is commonly used to render a list of items dynamically.
+2. When rendering lists, React expects a key:
+
+The key helps React identify which items were added, removed, or changed.
