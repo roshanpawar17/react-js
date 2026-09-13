@@ -92,7 +92,9 @@ npm run dev
 1. In React, Fragments let you group multiple JSX elements without adding an extra DOM element.
 2. React components need to return elements in a valid structure. Instead of adding an unnecessary wrapper:
 
+
 **---------------------**
+
 
 ### 06_map-method:
 
@@ -100,3 +102,15 @@ npm run dev
 2. When rendering lists, React expects a key:
 
 The key helps React identify which items were added, removed, or changed.
+
+
+**---------------------**
+
+### 07_conditional-rendering:
+
+#### Logical Operator:
+
+{condition && <Component />}
+
+1. If condition is true → component is displayed.
+2. If condition is false → nothing is displayed.
