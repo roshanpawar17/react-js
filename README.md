@@ -114,3 +114,28 @@ The key helps React identify which items were added, removed, or changed.
 
 1. If condition is true → component is displayed.
 2. If condition is false → nothing is displayed.
+
+
+**---------------------**
+
+### 08_props:
+
+1. In React, props (short for properties) are used to pass data from a parent component to a child component.
+2. Props can contain many kinds of JavaScript values:
+
+<User
+  name="Alex"                 // string
+  age={25}                    // number
+  isAdmin={true}              // boolean
+  hobbies={["Coding", "Gym"]} // array
+  user={{ id: 1, name: "Alex" }} // object
+  onClick={handleClick}       // function
+/>
+
+3. Pass props as attribute and received as argument.
+
+4. The key idea is:
+
+Parent → props → Child
+
+**---------------------**
