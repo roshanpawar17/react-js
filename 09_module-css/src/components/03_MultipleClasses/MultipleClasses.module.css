@@ -1,0 +1,13 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;  
+}
+
+.primary {
+  background-color: blue;
+  color: white;
+}
+
+.button-border-removal {
+  border: none;
+}

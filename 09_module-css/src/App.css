@@ -1,0 +1,18 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heading {
+    padding: 1rem;
+}
+
+.header {
+    color: red;
+}
+
+.button-width {
+    width: 5rem;
+}
+

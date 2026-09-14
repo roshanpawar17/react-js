@@ -139,3 +139,37 @@ The key helps React identify which items were added, removed, or changed.
 Parent → props → Child
 
 **---------------------**
+
+### 08_module-css:
+
+1. CSS Modules is a way to write CSS where class names are automatically scoped to a specific component.
+2. Why use CSS Modules?
+
+* Without CSS Modules:
+
+  /* Header.css */
+  .title {
+    color: red;
+  }
+
+* Another component could also have:
+
+  /* Dashboard.css */
+  .title {
+    color: blue;
+  }
+
+-> Both .title classes can conflict because they are global.
+-> With CSS Modules:
+
+className={styles.title}
+
+-> React/Vite generates a unique class name internally, something like:
+
+title_abc123
+
+-> So the styles remain isolated.
+
+3. The important naming convention is:
+
+ComponentName.module.css
