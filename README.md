@@ -181,3 +181,22 @@ ComponentName.module.css
 
 In React, children is a special prop that allows a component to receive content placed between its opening and closing tags.
 
+
+**---------------------**
+
+### 13_event-handling:
+
+1. In React, event handling means running a function when the user performs an action—such as clicking a button, typing in an input, or submitting a form.
+
+2. Common React events
+
+| Event          | Used for                  |
+| -------------- | ------------------------- |
+| `onClick`      | Clicking an element       |
+| `onChange`     | Changing an input value   |
+| `onSubmit`     | Submitting a form         |
+| `onKeyDown`    | Pressing a keyboard key   |
+| `onMouseEnter` | Mouse entering an element |
+| `onMouseLeave` | Mouse leaving an element  |
+| `onFocus`      | Element receives focus    |
+| `onBlur`       | Element loses focus       |
