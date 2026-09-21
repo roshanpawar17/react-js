@@ -140,7 +140,7 @@ Parent → props → Child
 
 **---------------------**
 
-### 08_module-css:
+### 09_module-css:
 
 1. CSS Modules is a way to write CSS where class names are automatically scoped to a specific component.
 2. Why use CSS Modules?
@@ -173,3 +173,11 @@ title_abc123
 3. The important naming convention is:
 
 ComponentName.module.css
+
+
+**---------------------**
+
+### 12_children-props:
+
+In React, children is a special prop that allows a component to receive content placed between its opening and closing tags.
+
