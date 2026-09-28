@@ -11,7 +11,7 @@ const TodoItems = ({ items }) => {
                 {
                     items?.length ? (
                         items.map((item) => (
-                            <TodoItem key={item?.name} item={item} />
+                            <TodoItem key={item?.todoname} item={item} />
                         ))
                     ) : <h3>Items not Available</h3>
                 }

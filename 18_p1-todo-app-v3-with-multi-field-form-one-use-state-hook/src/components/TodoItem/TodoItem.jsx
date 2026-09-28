@@ -1,8 +1,8 @@
 const TodoItem = ({ item }) => {
     return (
         <div className="flex gap-4">
-            <p className="w-[20rem]">{ item?.name || "-" }</p>
-            <p>{ item?.date || "-" }</p>
+            <p className="w-[20rem]">{ item?.todoname || "-" }</p>
+            <p>{ item?.tododate || "-" }</p>
         </div>
     )
 }
