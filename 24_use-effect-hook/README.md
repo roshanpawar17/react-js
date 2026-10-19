@@ -194,10 +194,10 @@ Requirement	                                            Use useEffect()?
 1. Synchronize with an external API or system	        - Often yes
 2. Register a browser event listener	                - Yes
 3. Start a timer or subscription	                    - Yes
-4. Update state directly in a button click handler	    - Usually no
+4. Update state directly in a button click handler	  - Usually no
 5. Calculate a value from existing state or props	    - Usually no
-6. Handle a form submission	                            - Usually no; use the submit handler
-7. Fetch data in a Next.js Server Component	            - Usually no; fetch directly in the server component when appropriate
+6. Handle a form submission	                          - Usually no; use the submit handler
+7. Fetch data in a Next.js Server Component	          - Usually no; fetch directly in the server component when appropriate
 
 -----
 
