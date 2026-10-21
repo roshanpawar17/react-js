@@ -1,5 +1,6 @@
 
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function Users() {
   const history = useHistory();
@@ -9,9 +10,9 @@ function Users() {
       <h1>Users</h1>
       <p>Welcome to Users Page.</p>
 
-      <button onClick={() => history.push("/dashboard")}>
+      <Link to="/dashboard">
         Go to Dashboard
-      </button>
+      </Link>
     </div>
   );
 }
