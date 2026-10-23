@@ -1,7 +1,9 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 
 export default function Dashboard() {
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log('Location ', location);
 
     const handleLogout = () => {
         localStorage.removeItem('isAuthenticated');
@@ -10,12 +12,18 @@ export default function Dashboard() {
 
     return (
         <>
-        <h1>Dashboard</h1>
-        <p>You are logged in!</p>
-        <Link to="/profile">View Profile</Link>
-        <br />
-        <br />
-        <button onClick={handleLogout}>Logout</button>
+            <h1>Dashboard</h1>
+            <p>You are logged in!</p>
+            <p>Name: {location?.state?.userName}</p>
+            <Link to={{
+                pathname: "/profile"
+            }} state={{
+                userId: 1,
+                userName: "Roshan"
+            }}>View Profile</Link>
+            <br />
+            <br />
+            <button onClick={handleLogout}>Logout</button>
         </>
     );
 }

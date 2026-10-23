@@ -23,7 +23,7 @@ export default function Login() {
 
     function handleLogin() {
         localStorage.setItem("isAuthenticated", "true");
-        navigate("/dashboard", { replace: true });
+        navigate("/dashboard", { replace: true, state: { userId: 1, userName: "Roshan" } });
     }
 
     return (
