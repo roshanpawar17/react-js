@@ -158,3 +158,102 @@ Method	            Example	                        Purpose
 8.  .parse()	      - schema.parse(data)	          - Validate and throw on failure
 9.  .refine()	      - z.string().refine(...)	      - Add a custom validation rule
 10. .transform()	  - z.string().transform(...)	    - Transform validated data
+
+------
+
+1. .refine() — Custom validation
+
+-> Use .refine() when built-in methods like .min(), .max(), and .email() are not enough for your validation rule.
+
+-> Example: A username must contain only letters and numbers.
+
+import { z } from "zod";
+
+const usernameSchema = z.string().refine(
+  (value) => /^[a-zA-Z0-9]+$/.test(value),
+  {
+    message: "Username can contain only letters and numbers",
+  }
+);
+
+console.log(usernameSchema.safeParse("Roshan123").success);
+// true
+
+console.log(usernameSchema.safeParse("Roshan@123").success);
+// false
+
+-> Another useful example: Password confirmation
+
+import { z } from "zod";
+
+const passwordSchema = z
+  .object({
+    password: z.string().min(8, "Password must contain at least 8 characters"),
+    confirmPassword: z.string(),
+  })
+  .refine(
+    (data) => data.password === data.confirmPassword,
+    {
+      message: "Passwords do not match",
+      path: ["confirmPassword"],
+    }
+  );
+
+-----
+
+2. .transform() — Transform data
+
+-> Use .transform() when you want to change a value after it passes validation.
+
+-> For example, you might want to:
+
+- Convert a username to lowercase.
+- Remove unnecessary whitespace.
+- Convert a string to a number.
+- Format user input before submitting it.
+
+-> Basic example
+
+import { z } from "zod";
+
+const usernameSchema = z.string().transform(
+  (value) => value.trim().toLowerCase()
+);
+
+const result = usernameSchema.parse("  ROSHAN  ");
+
+console.log(result);
+// "roshan"
+
+- The input is "  ROSHAN  ", but the output is "roshan".
+- Notice that .transform() returns the transformed value, not just true or false.
+
+-----
+
+=> Difference between .refine() and .transform()
+
+Feature	              .refine()	                      .transform()
+
+1. Main purpose	      - Validate data	                  - Change data
+2. Callback returns	  - true or false	                  - Transformed value
+3. Invalid result	    - Adds a validation               - issue	Can add an issue if used with validation logic, otherwise depends on the transform
+4. Example	          - Check username has no spaces	  - Convert username to lowercase
+
+-> Easy way to remember:
+
+- .refine() asks: “Is this value valid according to my custom rule?”
+- .transform() asks: “How should I change this value before using it?”
+
+-> You can also combine both methods:
+
+const usernameSchema = z
+  .string()
+  .refine(
+    (value) => value.trim().length >= 3,
+    "Username must contain at least 3 non-space characters"
+  )
+  .transform((value) => value.trim().toLowerCase());
+
+console.log(usernameSchema.safeParse("  ROSHAN  "));
+
+- The result succeeds and returns "roshan". If the trimmed username has fewer than three characters, validation fails.
